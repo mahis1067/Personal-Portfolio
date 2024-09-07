@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahi Shah</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <img src="{{ url_for('static', filename='background.jpg') }}" alt="Back" class="background">
+  <a href="{{ url_for('home') }}">
+    <button id="homeButton" class="header_button">Home</button>
+  </a>
+  <a href="{{ url_for('tech') }}">
+    <button id="techButton" class="header_button">Tech</button>
+  </a>
+  <a href="{{ url_for('art') }}">
+    <button id="artButton" class="header_button">Art</button>
+  </a>
+  <a href="{{ url_for('sports_dance') }}">
+    <button id="sportsButton" class="header_button">Sports/Dance</button>
+  </a>
+  <a href="{{ url_for('volunteer') }}">
+    <button id="volunteerButton" class="header_button">Volunteer</button>
+  </a>
+  <a href="{{ url_for('wloo_comp') }}">
+    <button id="waterlooButton" class="header_button">Waterloo Competition</button>
+  </a>
+  <div class="content">
+  {% block content %}
+  {% endblock %}
+  </div>
+
+  <!-- JavaScript for fade-in animation -->
+  <script>
+  function addClassOnScroll(selector, excludeSelector, className, threshold = 0.1) {
+  // Select all elements that match the given selector
+  const elementsToObserve = document.querySelectorAll(selector);
+  // Select elements to exclude from observation
+  const elementsToExclude = document.querySelectorAll(excludeSelector);
+
+  // Filter out elements to exclude from the list of elements to observe
+  const elementsToObserveFiltered = Array.from(elementsToObserve).filter(element => 
+    !Array.from(elementsToExclude).includes(element)
+  );
+
+  // Create an IntersectionObserver to observe when elements come into view
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add the specified class when element is in view
+        entry.target.classList.add(className);
+        console.log(`Element ${entry.target.tagName} is now visible`);
+      } else {
+        console.log(`Element ${entry.target.tagName} is not visible`);
+      }
+    });
+  }, {
+    threshold: threshold // Trigger when a specific percentage of the element is visible
+  });
+
+  // Observe each filtered element
+  elementsToObserveFiltered.forEach(element => {
+    observer.observe(element);
+  });
+}
+
+// Usage example
+document.addEventListener("DOMContentLoaded", function() {
+  // Call the function with the desired selector and class name
+  addClassOnScroll('img, button, .title, .title_ds, .social_buttons', '.background', 'visible', 0.1); // Applies 'visible' class to images, buttons, text, and social buttons except background
+});
+
+  </script>
+</body>
+</html>

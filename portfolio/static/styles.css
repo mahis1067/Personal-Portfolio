@@ -1,0 +1,121 @@
+/* Main styles.css */
+
+/* Container holding the buttons */
+body {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  min-height: 100vh; /* Ensures full viewport height */
+  margin: 0; /* Remove default body margin */
+  font-family: "Segoe UI", sans-serif; /* Apply consistent font */
+  overflow-x: hidden;
+}
+
+/* Anchor tag styling */
+a {
+  text-decoration: none; /* Remove underlines from anchor tags */
+}
+
+/* Button styling */
+.header_button{
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91); /* Gradient background */
+  color: white; /* White text color */
+  font-weight: bold;
+  font-size: 1vw; /* Large font size */
+  border: none; /* No border */
+  border-radius: 3vw; /* Rounded corners */
+  padding: 0.8vw 1.2vw; /* Large padding */
+  cursor: pointer; /* Cursor on hover */
+  box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  z-index: 109;
+  opacity: 0; /* Initially hidden for animation */
+  transform: translateY(20px); /* Initially positioned off-screen */
+}
+
+/* Hover animation */
+.header_button:hover{
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7); /* Updated gradient on hover */
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-0.2vw);
+}
+
+/* Click animation */
+.header_button:active{
+  transform: scale(0.95);
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.3);
+}
+
+/* Individual button positioning */
+#homeButton {
+  position: fixed;
+  top: 2vh;
+  right: 45vw;
+}
+
+#techButton {
+  position: fixed;
+  top: 2vh;
+  right: 39.5vw;
+}
+
+#artButton {
+  position: fixed;
+  top: 2vh;
+  right: 34.75vw;
+}
+
+#sportsButton {
+  position: fixed;
+  top: 2vh;
+  right: 25.1vw;
+}
+
+#volunteerButton {
+  position: fixed;
+  top: 2vh;
+  right: 17.1vw;
+}
+
+#waterlooButton {
+  position: fixed;
+  top: 2vh;
+  right: 3.5vw;
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Animation for visible elements */
+.visible {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background styling
+/* Title and subtitle styling */
+.title, .title_ds, .me, .moon, .me_glow, .blur_image, .social_buttons, .rec_image1, .rec_image2, .rec_image3, .planet {
+  opacity: 0; /* Initially hidden for animation */
+  transform: translateY(20px); /* Initially positioned off-screen */
+}
+

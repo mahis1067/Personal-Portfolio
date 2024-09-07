@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Volunteer</h1>
+<a href="{{ url_for('tutor') }}">
+  <button>Tutor</button>
+</a>
+<a href="{{ url_for('therapy') }}">
+  <button>Therapy</button>
+</a>
+{% endblock %}

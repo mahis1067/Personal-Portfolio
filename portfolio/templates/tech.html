@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='tech_styles.css') }}">
+
+<h1>Tech</h1>
+<a href="{{ url_for('hack') }}">
+  <button>Hackathons</button>
+</a>
+<a href="{{ url_for('rob') }}">
+  <button>Robotics</button>
+</a>
+<a href="{{ url_for('stem') }}">
+  <button>STEM</button>
+</a>
+<a href="{{ url_for('vid') }}">
+  <button>Video</button>
+</a>
+<a href="{{ url_for('cs50') }}">
+  <button>CS50</button>
+</a>
+{% endblock %}

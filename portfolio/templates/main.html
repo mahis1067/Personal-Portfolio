@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main_styles.css') }}">
+
+<img src="{{ url_for('static', filename='moon.jpg') }}" alt="Moon" class="moon">
+<img src="{{ url_for('static', filename='main_me.jpg') }}" alt="me" class="me">
+<img src="{{ url_for('static', filename='glow.jpg') }}" alt="Glow" class="me_glow">
+<div class="title">
+  <h1>Mahi Shah</h1>
+</div>
+<div class="title_ds">
+  <h2>EXTRACURRICULAR AND SKILLS PORTFOLIO</h2>
+  <br><br><br>
+  <h2> Recommended pages below</h2>
+</div>
+
+<div class="social_buttons">
+  <a href="https://www.linkedin.com/in/mahi-shah-642273255/" class="social_button" id="linkdn">
+    <button>LinkedIn</button>
+  </a>
+  <a href="https://github.com/mahis1067" class="social_button" id="github">
+    <button>GitHub</button>
+  </a>
+  <a href="https://docs.google.com/document/d/1PBQ0Z5aOAwFR_qvsYlrJFPRmohmjRrzwJROr0c54Wxw/edit?usp=sharing" class="social_button" id="resume">
+    <button>Resume</button>
+  </a>
+  <a href="https://www.instagram.com/abi_artszz/" class="social_button" id="insta">
+    <button>Instagram</button>
+  </a>
+</div>
+
+
+
+<a href="{{ url_for(recommendations[0]) }}">
+  <img src="{{ url_for('static', filename=recommendations[0] ~ '_rec.jpg') }}" class="rec_image1">
+</a>
+
+<a href="{{ url_for(recommendations[1]) }}">
+  <img src="{{ url_for('static', filename=recommendations[1] ~ '_rec.jpg') }}" class="rec_image1">
+</a>
+
+<a href="{{ url_for(recommendations[2]) }}">
+  <img src="{{ url_for('static', filename=recommendations[2] ~ '_rec.jpg') }}" class="rec_image1">
+</a>
+
+
+<img src="{{ url_for('static', filename='planet.jpg') }}" class="planet">
+
+
+{% endblock %}
+
+

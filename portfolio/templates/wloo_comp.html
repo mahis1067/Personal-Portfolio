@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Waterloo Competition</h1>
+<a href="{{ url_for('math') }}">
+  <button>Math</button>
+</a>
+<a href="{{ url_for('cs') }}">
+  <button>CS</button>
+</a>
+{% endblock %}
